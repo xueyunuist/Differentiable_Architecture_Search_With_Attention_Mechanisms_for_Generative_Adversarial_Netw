@@ -1,0 +1,19 @@
+2023-04-09 20:31:52,476 Namespace(max_epoch=320.0, max_iter=50000, gen_batch_size=128, dis_batch_size=64, g_lr=0.0002, d_lr=0.0002, ctrl_lr=0.00035, lr_decay=False, consistent=False, beta1=0.0, beta2=0.9, num_workers=8, latent_dim=128, img_size=32, channels=3, image_every=10, eval_dg_every=4, eval_dg=False, n_critic=5, val_freq=20, print_freq=100, load_path=None, exp_name='re-train_searched_G', d_spectral_norm=True, g_spectral_norm=False, dataset='cifar10', data_path='./data', init_type='xavier_uniform', loss_type='hinge_loss', gf_dim=256, df_dim=128, gen_model='alphaGAN_network', dis_model='alphaGAN_network', gen='Network_gen_Auto', dis='Discriminator', arch_gen='arch', arch_dis='dis_common_loss', controller='controller', eval_batch_size=100, num_eval_imgs=50000, bottom_width=4, random_seed=12345, shared_epoch=15, grow_step1=25, grow_step2=55, max_search_iter=90, ctrl_step=30, ctrl_sample_batch=1, hid_size=100, baseline_decay=0.9, rl_num_eval_img=5000, num_candidate=10, topk=5, entropy_coeff=0.001, dynamic_reset_threshold=0.001, dynamic_reset_window=500, arch=None, n_classes=10, path_helper={'prefix': 'logs/re-train_searched_G_2023_04_09_20_31_52', 'ckpt_path': 'logs/re-train_searched_G_2023_04_09_20_31_52/Model', 'log_path': 'logs/re-train_searched_G_2023_04_09_20_31_52/Log', 'sample_path': 'logs/re-train_searched_G_2023_04_09_20_31_52/Samples'})
+2023-04-09 20:31:54,846 FLOPs is 636.226G, param count is 9.781M
+2023-04-09 20:50:31,516 Inception score: 4.932754993438721, FID score: 86.57771550326453+-0.039601825177669525 || @ epoch 20.
+2023-04-09 21:08:30,357 Inception score: 6.821031093597412, FID score: 39.81906821847542+-0.09185025095939636 || @ epoch 40.
+2023-04-09 21:26:28,458 Inception score: 7.653387546539307, FID score: 31.52338698883102+-0.07140247523784637 || @ epoch 60.
+2023-04-09 21:44:40,954 Inception score: 8.007333755493164, FID score: 27.864245045916903+-0.10799717158079147 || @ epoch 80.
+2023-04-09 22:03:04,229 Inception score: 8.125579833984375, FID score: 26.768493292347443+-0.06734922528266907 || @ epoch 100.
+2023-04-09 22:21:26,933 Inception score: 8.204505920410156, FID score: 24.275468110151508+-0.05097819119691849 || @ epoch 120.
+2023-04-09 22:39:50,275 Inception score: 8.30181884765625, FID score: 26.229854088481034+-0.09665918350219727 || @ epoch 140.
+2023-04-09 22:58:14,119 Inception score: 8.334574699401855, FID score: 24.29918820326054+-0.05798075720667839 || @ epoch 160.
+2023-04-09 23:16:37,245 Inception score: 8.514145851135254, FID score: 24.102444722661403+-0.07938310503959656 || @ epoch 180.
+2023-04-09 23:35:00,980 Inception score: 8.176953315734863, FID score: 23.45837741151894+-0.08353716135025024 || @ epoch 200.
+2023-04-09 23:53:24,513 Inception score: 8.23090648651123, FID score: 22.296870061154948+-0.06183880567550659 || @ epoch 220.
+2023-04-10 00:11:49,290 Inception score: 8.171567916870117, FID score: 23.839830847392648+-0.06840462982654572 || @ epoch 240.
+2023-04-10 00:30:13,301 Inception score: 8.18864917755127, FID score: 22.874383175142725+-0.10227378457784653 || @ epoch 260.
+2023-04-10 00:48:36,154 Inception score: 8.534371376037598, FID score: 22.19462185636928+-0.08988416939973831 || @ epoch 280.
+2023-04-10 01:07:00,350 Inception score: 8.079365730285645, FID score: 23.729522155746736+-0.1138826534152031 || @ epoch 300.
+2023-04-10 01:24:41,426 Inception score: 8.16105842590332, FID score: 23.941284059175473+-0.0755368024110794 || @ epoch 319.
+2023-04-10 01:24:42,623 best_is is 8.534371376037598+-0.08988416939973831@280 epoch, fid is 22.19462185636928, best_fid is 22.19462185636928@280, is is 8.534371376037598+-0.08988416939973831

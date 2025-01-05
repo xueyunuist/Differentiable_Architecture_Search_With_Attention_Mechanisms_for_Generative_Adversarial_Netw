@@ -1,0 +1,616 @@
+2023-04-12 08:51:49,608 gpu device = 0
+2023-04-12 08:51:49,608 args = Namespace(data='./data', dataset='stl10', gen='Network_gen_Auto', dis='Discriminator', num_classes=10, batch_size=64, gen_batch_size=64, dis_batch_size=64, eval_batch_size=100, num_eval_imgs=50000, img_size=32, channels=3, learning_rate=0.025, learning_rate_min=0.001, g_lr=0.0002, d_lr=4e-05, momentum=0.9, weight_decay=0.0003, lamina=1.0, report_freq=50, gpu=0, epochs=100, eval_every=4, init_channels=16, layers=8, model_path='saved_models', cutout=False, cutout_length=16, drop_path_prob=0.3, save='logs/search_test-EXP-20230412-085148', seed=2, grad_clip=5, train_portion=0.5, unrolled=False, arch_learning_rate=0.0003, arch_weight_decay=0.001, beta1=0.0, beta2=0.9, gf_dim=256, df_dim=128, latent_dim=128, n_critic=5, fix_alphas_epochs=-1, outter_steps=20, inner_steps=20, worst_steps=20, bottom_width=4, d_spectral_norm=True, parallel=False, dis_with_bn=False, gen_with_bn=False, eval=True, restrict_dis_grow=False, with_dis_worst=True, use_train_val=False, grow=False, grow_epoch=[20, 60, 80], use_gumbel=False, update_alphas=True, only_update_w=False, only_update_w_g=True, only_update_alpha_g=False, only_update_alpha=False, load_path='', gen_normal_opr='PRIMITIVES_NORMAL_GEN_wo_skip_none_sep', gen_up_opr='PRIMITIVES_UP', dis_normal_opr='PRIMITIVES_NORMAL_DIS', start_epoch=0, t=0.5, exp_name='search_test')
+2023-04-12 08:51:50,514 From /data/public/ck/AlphaGAN/utils/inception_score.py:77: FastGFile.__init__ (from tensorflow.python.platform.gfile) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.gfile.GFile.
+2023-04-12 08:51:53,423 generator param size = 6.754883MB
+2023-04-12 08:51:53,423 discriminator param size = 1.053824MB
+2023-04-12 08:52:01,031 step 0: g_loss is -22.462543487548828, d_loss is 33.64943313598633
+2023-04-12 08:52:02,483 step 5: g_loss is -3.0090878009796143, d_loss is 6.331543445587158
+2023-04-12 08:52:03,932 step 10: g_loss is 2.065859317779541, d_loss is 4.373740196228027
+2023-04-12 08:52:05,341 step 15: g_loss is -1.8493846654891968, d_loss is 3.412942409515381
+2023-04-12 08:52:06,752 step 20: g_loss is 3.0851564407348633, d_loss is 2.8396005630493164
+2023-04-12 08:52:07,024 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('nearest', 0), ('deconv', 1)], '2': [('deconv', 0), ('bilinear', 1)], '3': [('deconv', 0), ('bilinear', 1)]}, skip_2=[('nearest', 0)], skip_3=[('bilinear', 0), ('deconv', 1)])
+2023-04-12 08:52:08,724 step 25: g_loss is -1.1400450468063354, d_loss is 2.2701191902160645
+2023-04-12 08:52:10,131 step 30: g_loss is 4.099898815155029, d_loss is 1.5042650699615479
+2023-04-12 08:52:11,537 step 35: g_loss is 0.4770139455795288, d_loss is 1.822620153427124
+2023-04-12 08:52:12,936 step 40: g_loss is 4.185550689697266, d_loss is 1.6501638889312744
+2023-04-12 08:52:13,621 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('nearest', 0), ('deconv', 1)], '2': [('deconv', 0), ('bilinear', 1)], '3': [('bilinear', 0), ('bilinear', 1)]}, skip_2=[('nearest', 0)], skip_3=[('bilinear', 0), ('deconv', 1)])
+2023-04-12 08:52:14,916 step 45: g_loss is 0.2653850317001343, d_loss is 2.388296127319336
+2023-04-12 08:52:16,300 step 50: g_loss is 1.3676868677139282, d_loss is 0.16442757844924927
+2023-04-12 08:52:17,693 step 55: g_loss is 1.9319016933441162, d_loss is 0.13266542553901672
+2023-04-12 08:52:19,106 step 60: g_loss is 0.33594387769699097, d_loss is 0.3887742757797241
+2023-04-12 08:52:20,519 step 65: g_loss is 5.053434371948242, d_loss is 1.3988879919052124
+2023-04-12 08:52:20,618 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('nearest', 0), ('deconv', 1)], '2': [('deconv', 0), ('bilinear', 1)], '3': [('bilinear', 0), ('bilinear', 1)]}, skip_2=[('nearest', 0)], skip_3=[('bilinear', 0), ('deconv', 1)])
+2023-04-12 08:52:22,446 step 70: g_loss is -1.2687923908233643, d_loss is 2.946066379547119
+2023-04-12 08:52:23,870 step 75: g_loss is 4.165388584136963, d_loss is 1.2759937047958374
+2023-04-12 08:52:25,288 step 80: g_loss is 0.5148835182189941, d_loss is 0.6715030074119568
+2023-04-12 08:52:26,822 step 85: g_loss is 0.9592417478561401, d_loss is 0.5559513568878174
+2023-04-12 08:52:27,327 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('bilinear', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 08:57:20,469 epoch 4: IS is 1.5299272537231445+-0.005867921747267246, FID is 278.7687179394631
+2023-04-12 08:57:20,470 best epoch 0: IS is 1.5299272537231445
+2023-04-12 08:57:20,470 best epoch 0: FID is 278.7687179394631
+2023-04-12 08:57:22,141 step 90: g_loss is 2.548401355743408, d_loss is 1.1527376174926758
+2023-04-12 08:57:23,595 step 95: g_loss is 3.515979766845703, d_loss is 2.310302257537842
+2023-04-12 08:57:25,062 step 100: g_loss is -0.5219775438308716, d_loss is 1.6452677249908447
+2023-04-12 08:57:26,584 step 105: g_loss is 2.5371389389038086, d_loss is 1.9580997228622437
+2023-04-12 08:57:27,615 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 08:57:28,703 step 110: g_loss is -0.9348169565200806, d_loss is 1.758113145828247
+2023-04-12 08:57:30,132 step 115: g_loss is 1.8503000736236572, d_loss is 2.186197519302368
+2023-04-12 08:57:31,724 step 120: g_loss is -1.4527100324630737, d_loss is 1.915045976638794
+2023-04-12 08:57:33,193 step 125: g_loss is 1.4069998264312744, d_loss is 2.476900339126587
+2023-04-12 08:57:34,653 step 130: g_loss is -1.3714523315429688, d_loss is 1.8801406621932983
+2023-04-12 08:57:34,996 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_1x1', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 08:57:36,798 step 135: g_loss is 1.7766821384429932, d_loss is 2.2406868934631348
+2023-04-12 08:57:38,250 step 140: g_loss is -0.9773746728897095, d_loss is 1.8161920309066772
+2023-04-12 08:57:39,725 step 145: g_loss is 1.7712090015411377, d_loss is 2.0489389896392822
+2023-04-12 08:57:41,187 step 150: g_loss is -0.6937816143035889, d_loss is 1.7935090065002441
+2023-04-12 08:57:41,961 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 08:57:43,305 step 155: g_loss is 1.5755910873413086, d_loss is 1.9639649391174316
+2023-04-12 08:57:44,776 step 160: g_loss is -0.8971651196479797, d_loss is 1.6393417119979858
+2023-04-12 08:57:46,255 step 165: g_loss is 0.6542363166809082, d_loss is 1.6601200103759766
+2023-04-12 08:57:47,724 step 170: g_loss is 0.7816210985183716, d_loss is 1.0646593570709229
+2023-04-12 08:57:49,193 step 175: g_loss is 3.2456002235412598, d_loss is 1.0151017904281616
+2023-04-12 08:57:49,349 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:02:24,181 epoch 8: IS is 1.4526851177215576+-0.007539054844528437, FID is 274.2232168384011
+2023-04-12 09:02:24,183 best epoch 0: IS is 1.5299272537231445
+2023-04-12 09:02:24,192 best epoch 0: FID is 274.2232168384011
+2023-04-12 09:02:26,192 step 180: g_loss is -0.7471021413803101, d_loss is 1.4804539680480957
+2023-04-12 09:02:27,645 step 185: g_loss is 1.5317153930664062, d_loss is 1.783689260482788
+2023-04-12 09:02:29,247 step 190: g_loss is -0.8776547908782959, d_loss is 1.755150318145752
+2023-04-12 09:02:30,691 step 195: g_loss is 1.36905837059021, d_loss is 1.8170628547668457
+2023-04-12 09:02:31,263 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:02:32,817 step 200: g_loss is -0.556855320930481, d_loss is 1.5132460594177246
+2023-04-12 09:02:34,282 step 205: g_loss is 1.8047549724578857, d_loss is 1.493743896484375
+2023-04-12 09:02:35,734 step 210: g_loss is -0.10661269724369049, d_loss is 1.2164844274520874
+2023-04-12 09:02:37,198 step 215: g_loss is 1.672987461090088, d_loss is 1.8092690706253052
+2023-04-12 09:02:38,202 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:02:39,290 step 220: g_loss is -0.15258613228797913, d_loss is 0.9019312858581543
+2023-04-12 09:02:40,766 step 225: g_loss is 2.184190273284912, d_loss is 1.5178136825561523
+2023-04-12 09:02:42,261 step 230: g_loss is 0.2889401912689209, d_loss is 1.2202212810516357
+2023-04-12 09:02:43,780 step 235: g_loss is 1.514000654220581, d_loss is 1.9064580202102661
+2023-04-12 09:02:45,241 step 240: g_loss is -0.24968460202217102, d_loss is 1.1300833225250244
+2023-04-12 09:02:45,586 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:02:47,481 step 245: g_loss is 1.7307178974151611, d_loss is 1.4676915407180786
+2023-04-12 09:02:48,926 step 250: g_loss is -0.008183883503079414, d_loss is 0.8789266347885132
+2023-04-12 09:02:50,408 step 255: g_loss is 2.135713815689087, d_loss is 1.3905061483383179
+2023-04-12 09:02:51,885 step 260: g_loss is 0.06928203999996185, d_loss is 0.771980345249176
+2023-04-12 09:02:52,682 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:07:26,644 epoch 12: IS is 1.6615318059921265+-0.012031554244458675, FID is 234.01781818391544
+2023-04-12 09:07:26,646 best epoch 0: IS is 1.6615318059921265
+2023-04-12 09:07:26,646 best epoch 0: FID is 234.01781818391544
+2023-04-12 09:07:28,036 step 265: g_loss is 2.3995590209960938, d_loss is 0.773120105266571
+2023-04-12 09:07:29,530 step 270: g_loss is 0.6828466653823853, d_loss is 0.9354274272918701
+2023-04-12 09:07:31,029 step 275: g_loss is 2.3274688720703125, d_loss is 1.268271565437317
+2023-04-12 09:07:32,570 step 280: g_loss is 0.6577165126800537, d_loss is 0.6004003286361694
+2023-04-12 09:07:34,057 step 285: g_loss is 1.9682804346084595, d_loss is 1.683900237083435
+2023-04-12 09:07:34,210 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:07:36,333 step 290: g_loss is 0.4378066658973694, d_loss is 0.8295530080795288
+2023-04-12 09:07:37,774 step 295: g_loss is 2.2001256942749023, d_loss is 1.2641912698745728
+2023-04-12 09:07:39,234 step 300: g_loss is 0.9406301975250244, d_loss is 0.5191061496734619
+2023-04-12 09:07:40,708 step 305: g_loss is 2.391571521759033, d_loss is 1.17940092086792
+2023-04-12 09:07:41,258 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:07:43,007 step 310: g_loss is 0.9715149402618408, d_loss is 0.7117123603820801
+2023-04-12 09:07:44,457 step 315: g_loss is 2.276668071746826, d_loss is 0.795557975769043
+2023-04-12 09:07:45,938 step 320: g_loss is 0.7955791354179382, d_loss is 0.60121089220047
+2023-04-12 09:07:47,512 step 325: g_loss is 2.3863375186920166, d_loss is 0.9637197852134705
+2023-04-12 09:07:48,470 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:07:49,549 step 330: g_loss is 1.0133404731750488, d_loss is 0.5313829183578491
+2023-04-12 09:07:51,018 step 335: g_loss is 2.778900623321533, d_loss is 0.7288391590118408
+2023-04-12 09:07:52,471 step 340: g_loss is 1.7005031108856201, d_loss is 0.4344540238380432
+2023-04-12 09:07:54,083 step 345: g_loss is 2.3553786277770996, d_loss is 1.1801269054412842
+2023-04-12 09:07:55,542 step 350: g_loss is 1.6552808284759521, d_loss is 0.31170040369033813
+2023-04-12 09:07:55,913 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_1x1', 2)], '2': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:12:31,612 epoch 16: IS is 1.7030279636383057+-0.006982078310102224, FID is 223.98554491188827
+2023-04-12 09:12:31,613 best epoch 0: IS is 1.7030279636383057
+2023-04-12 09:12:31,613 best epoch 0: FID is 223.98554491188827
+2023-04-12 09:12:33,469 step 355: g_loss is 2.566068172454834, d_loss is 1.023200511932373
+2023-04-12 09:12:35,001 step 360: g_loss is 1.7678794860839844, d_loss is 0.1945061832666397
+2023-04-12 09:12:36,489 step 365: g_loss is 2.6112172603607178, d_loss is 1.0592730045318604
+2023-04-12 09:12:37,914 step 370: g_loss is 1.6310135126113892, d_loss is 0.27498504519462585
+2023-04-12 09:12:38,662 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_1x1', 2)], '2': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:12:39,941 step 375: g_loss is 2.2310872077941895, d_loss is 1.071906328201294
+2023-04-12 09:12:41,449 step 380: g_loss is 1.681178331375122, d_loss is 0.4176046550273895
+2023-04-12 09:12:43,062 step 385: g_loss is 2.811298131942749, d_loss is 1.08927321434021
+2023-04-12 09:12:44,518 step 390: g_loss is 1.7641756534576416, d_loss is 0.16304154694080353
+2023-04-12 09:12:45,962 step 395: g_loss is 2.4497580528259277, d_loss is 1.0552763938903809
+2023-04-12 09:12:46,115 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_1x1', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:12:48,201 step 400: g_loss is 1.8091121912002563, d_loss is 0.5628209710121155
+2023-04-12 09:12:49,718 step 405: g_loss is 2.1570534706115723, d_loss is 0.8630027770996094
+2023-04-12 09:12:51,180 step 410: g_loss is 2.6639411449432373, d_loss is 0.14474374055862427
+2023-04-12 09:12:52,668 step 415: g_loss is 3.0512824058532715, d_loss is 1.2695294618606567
+2023-04-12 09:12:53,209 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_1x1', 2)], '2': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:12:54,776 step 420: g_loss is 2.132446050643921, d_loss is 0.09697738289833069
+2023-04-12 09:12:56,271 step 425: g_loss is 2.3759512901306152, d_loss is 0.9518797397613525
+2023-04-12 09:12:57,737 step 430: g_loss is 1.81453537940979, d_loss is 0.0718565285205841
+2023-04-12 09:12:59,252 step 435: g_loss is 2.302879810333252, d_loss is 1.0849964618682861
+2023-04-12 09:13:00,181 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_1x1', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:17:34,970 epoch 20: IS is 1.477502465248108+-0.006914204452186823, FID is 252.79115982737963
+2023-04-12 09:17:34,971 best epoch 0: IS is 1.7030279636383057
+2023-04-12 09:17:34,982 best epoch 0: FID is 223.98554491188827
+2023-04-12 09:17:36,110 step 440: g_loss is 2.2077760696411133, d_loss is 0.12083607167005539
+2023-04-12 09:17:37,542 step 445: g_loss is 2.510322332382202, d_loss is 0.8371393084526062
+2023-04-12 09:17:39,039 step 450: g_loss is 2.145339012145996, d_loss is 0.07260167598724365
+2023-04-12 09:17:40,480 step 455: g_loss is 2.2155027389526367, d_loss is 1.0774880647659302
+2023-04-12 09:17:41,955 step 460: g_loss is 1.9783401489257812, d_loss is 0.1978285014629364
+2023-04-12 09:17:42,312 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_1x1', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:17:44,048 step 465: g_loss is 2.7329535484313965, d_loss is 0.7763034105300903
+2023-04-12 09:17:45,532 step 470: g_loss is 1.987208604812622, d_loss is 0.10275042057037354
+2023-04-12 09:17:47,026 step 475: g_loss is 1.7203887701034546, d_loss is 1.0858876705169678
+2023-04-12 09:17:48,553 step 480: g_loss is 0.8652278184890747, d_loss is 0.48163270950317383
+2023-04-12 09:17:49,342 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_7x7', 0), ('conv_1x1', 1), ('conv_1x1', 2)], '2': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:17:50,670 step 485: g_loss is 2.2446722984313965, d_loss is 0.3996294140815735
+2023-04-12 09:17:52,121 step 490: g_loss is 1.9793988466262817, d_loss is 0.16789546608924866
+2023-04-12 09:17:53,534 step 495: g_loss is 1.489558458328247, d_loss is 1.5892213582992554
+2023-04-12 09:17:55,005 step 500: g_loss is -0.31782418489456177, d_loss is 1.2324130535125732
+2023-04-12 09:17:56,513 step 505: g_loss is 2.2028884887695312, d_loss is 1.2595477104187012
+2023-04-12 09:17:56,678 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_1x1', 2)], '2': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:17:58,628 step 510: g_loss is 2.94689679145813, d_loss is 0.10275320708751678
+2023-04-12 09:18:00,093 step 515: g_loss is 2.3346076011657715, d_loss is 0.03390974551439285
+2023-04-12 09:18:01,581 step 520: g_loss is 2.727144718170166, d_loss is 1.0308451652526855
+2023-04-12 09:18:03,109 step 525: g_loss is 1.9874824285507202, d_loss is 0.11107813566923141
+2023-04-12 09:18:03,665 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_1x1', 2)], '2': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:22:38,184 epoch 24: IS is 1.7470228672027588+-0.00836027879267931, FID is 225.09806860246587
+2023-04-12 09:22:38,185 best epoch 0: IS is 1.7470228672027588
+2023-04-12 09:22:38,185 best epoch 0: FID is 223.98554491188827
+2023-04-12 09:22:39,820 step 530: g_loss is 1.969487190246582, d_loss is 1.1182799339294434
+2023-04-12 09:22:41,275 step 535: g_loss is 2.347121238708496, d_loss is 0.10957279801368713
+2023-04-12 09:22:42,719 step 540: g_loss is 2.1483824253082275, d_loss is 1.24172043800354
+2023-04-12 09:22:44,214 step 545: g_loss is 1.8144960403442383, d_loss is 0.036443036049604416
+2023-04-12 09:22:45,177 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('conv_1x1', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:22:46,340 step 550: g_loss is 2.275038957595825, d_loss is 1.092502474784851
+2023-04-12 09:22:47,804 step 555: g_loss is 1.9156246185302734, d_loss is 0.11281369626522064
+2023-04-12 09:22:49,269 step 560: g_loss is 1.6857664585113525, d_loss is 1.433519721031189
+2023-04-12 09:22:50,717 step 565: g_loss is 1.6437506675720215, d_loss is 0.24659022688865662
+2023-04-12 09:22:52,253 step 570: g_loss is 1.932380199432373, d_loss is 0.0667124092578888
+2023-04-12 09:22:52,602 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_1x1', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:22:54,334 step 575: g_loss is 2.1636581420898438, d_loss is 0.04815499484539032
+2023-04-12 09:22:55,819 step 580: g_loss is 1.9762331247329712, d_loss is 1.321733832359314
+2023-04-12 09:22:57,282 step 585: g_loss is 0.6197314262390137, d_loss is 0.888386070728302
+2023-04-12 09:22:58,717 step 590: g_loss is 2.1954145431518555, d_loss is 0.11419126391410828
+2023-04-12 09:22:59,470 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_1x1', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:23:00,971 step 595: g_loss is 2.4579455852508545, d_loss is 1.139526128768921
+2023-04-12 09:23:02,515 step 600: g_loss is 2.12471342086792, d_loss is 0.05710382014513016
+2023-04-12 09:23:03,990 step 605: g_loss is 1.930722951889038, d_loss is 1.2379379272460938
+2023-04-12 09:23:05,439 step 610: g_loss is 1.5380377769470215, d_loss is 0.19706137478351593
+2023-04-12 09:23:06,905 step 615: g_loss is 1.6164567470550537, d_loss is 1.5277900695800781
+2023-04-12 09:23:07,070 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_1x1', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:27:42,158 epoch 28: IS is 1.5768324136734009+-0.013598411343991756, FID is 242.23210676494523
+2023-04-12 09:27:42,159 best epoch 0: IS is 1.7470228672027588
+2023-04-12 09:27:42,159 best epoch 0: FID is 223.98554491188827
+2023-04-12 09:27:44,241 step 620: g_loss is 0.9764081239700317, d_loss is 0.4879460036754608
+2023-04-12 09:27:45,690 step 625: g_loss is 1.7489889860153198, d_loss is 0.08782030642032623
+2023-04-12 09:27:47,160 step 630: g_loss is 2.2982115745544434, d_loss is 0.00792761705815792
+2023-04-12 09:27:48,617 step 635: g_loss is 2.1273603439331055, d_loss is 0.8178154230117798
+2023-04-12 09:27:49,198 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_1x1', 2)], '2': [('conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:27:50,833 step 640: g_loss is 1.9792824983596802, d_loss is 0.08905542641878128
+2023-04-12 09:27:52,354 step 645: g_loss is 1.8975245952606201, d_loss is 0.12308957427740097
+2023-04-12 09:27:53,908 step 650: g_loss is 3.649308681488037, d_loss is 0.3282744884490967
+2023-04-12 09:27:55,322 step 655: g_loss is 2.531886577606201, d_loss is 0.025655455887317657
+2023-04-12 09:27:56,314 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_1x1', 2)], '2': [('conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_1x1', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:27:57,413 step 660: g_loss is 2.4415066242218018, d_loss is 0.6654917597770691
+2023-04-12 09:27:58,898 step 665: g_loss is 1.236873745918274, d_loss is 0.2463342696428299
+2023-04-12 09:28:00,390 step 670: g_loss is 2.154524087905884, d_loss is 0.0627640038728714
+2023-04-12 09:28:01,895 step 675: g_loss is 1.9775159358978271, d_loss is 0.942711591720581
+2023-04-12 09:28:03,356 step 680: g_loss is 0.2724732458591461, d_loss is 0.9024286270141602
+2023-04-12 09:28:03,714 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_1x1', 2)], '2': [('conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_1x1', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:28:05,483 step 685: g_loss is 2.0233426094055176, d_loss is 1.0610063076019287
+2023-04-12 09:28:06,954 step 690: g_loss is 1.713525414466858, d_loss is 0.029376965016126633
+2023-04-12 09:28:08,407 step 695: g_loss is 2.0004236698150635, d_loss is 1.0857584476470947
+2023-04-12 09:28:09,887 step 700: g_loss is 1.4416592121124268, d_loss is 0.10128994286060333
+2023-04-12 09:28:10,638 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '2': [('conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:32:46,913 epoch 32: IS is 1.7081587314605713+-0.01181571464985609, FID is 209.36976003401588
+2023-04-12 09:32:46,914 best epoch 0: IS is 1.7470228672027588
+2023-04-12 09:32:46,914 best epoch 0: FID is 209.36976003401588
+2023-04-12 09:32:48,306 step 705: g_loss is 1.9097834825515747, d_loss is 1.0982459783554077
+2023-04-12 09:32:49,830 step 710: g_loss is 2.2339563369750977, d_loss is 0.04314758628606796
+2023-04-12 09:32:51,290 step 715: g_loss is 2.5207951068878174, d_loss is 0.4700271189212799
+2023-04-12 09:32:52,793 step 720: g_loss is 2.7611002922058105, d_loss is 0.04522734135389328
+2023-04-12 09:32:54,269 step 725: g_loss is 0.8843621015548706, d_loss is 0.5776599645614624
+2023-04-12 09:32:54,422 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '2': [('conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:32:56,486 step 730: g_loss is 3.495901107788086, d_loss is 0.029626592993736267
+2023-04-12 09:32:57,986 step 735: g_loss is 1.5396530628204346, d_loss is 0.14416703581809998
+2023-04-12 09:32:59,477 step 740: g_loss is 0.6304144263267517, d_loss is 0.7522280812263489
+2023-04-12 09:33:00,956 step 745: g_loss is 3.1393632888793945, d_loss is 0.3400826156139374
+2023-04-12 09:33:01,539 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_5x5', 1), ('conv_5x5', 2)], '2': [('conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:33:03,097 step 750: g_loss is 2.026123285293579, d_loss is 0.17376169562339783
+2023-04-12 09:33:04,585 step 755: g_loss is 2.2066290378570557, d_loss is 0.08842939138412476
+2023-04-12 09:33:06,081 step 760: g_loss is 2.2112808227539062, d_loss is 0.5658684372901917
+2023-04-12 09:33:07,711 step 765: g_loss is 0.8557899594306946, d_loss is 0.7641260027885437
+2023-04-12 09:33:08,667 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_3x3', 0), ('conv_5x5', 1), ('conv_5x5', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:33:09,797 step 770: g_loss is 2.202631711959839, d_loss is 0.031144501641392708
+2023-04-12 09:33:11,294 step 775: g_loss is 1.9663692712783813, d_loss is 0.07015775889158249
+2023-04-12 09:33:12,701 step 780: g_loss is 2.5691943168640137, d_loss is 0.7882955074310303
+2023-04-12 09:33:14,123 step 785: g_loss is 1.015563726425171, d_loss is 0.22307711839675903
+2023-04-12 09:33:15,601 step 790: g_loss is 2.068402051925659, d_loss is 0.03188633918762207
+2023-04-12 09:33:15,978 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_3x3', 0), ('conv_5x5', 1), ('conv_5x5', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:37:51,267 epoch 36: IS is 1.7120730876922607+-0.012343897484242916, FID is 248.97791295139297
+2023-04-12 09:37:51,268 best epoch 0: IS is 1.7470228672027588
+2023-04-12 09:37:51,269 best epoch 0: FID is 209.36976003401588
+2023-04-12 09:37:53,119 step 795: g_loss is 1.8666276931762695, d_loss is 0.6144161820411682
+2023-04-12 09:37:54,623 step 800: g_loss is 0.1663282811641693, d_loss is 1.3780649900436401
+2023-04-12 09:37:56,098 step 805: g_loss is 2.1566319465637207, d_loss is 0.5698742866516113
+2023-04-12 09:37:57,672 step 810: g_loss is 4.471515655517578, d_loss is 0.051566869020462036
+2023-04-12 09:37:58,442 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:37:59,796 step 815: g_loss is 1.6721760034561157, d_loss is 0.45183414220809937
+2023-04-12 09:38:01,316 step 820: g_loss is 0.8904410004615784, d_loss is 0.4394805431365967
+2023-04-12 09:38:02,823 step 825: g_loss is 3.8571252822875977, d_loss is 0.001870565116405487
+2023-04-12 09:38:04,294 step 830: g_loss is 3.1917991638183594, d_loss is 0.03174606338143349
+2023-04-12 09:38:05,779 step 835: g_loss is 2.350775718688965, d_loss is 0.22883820533752441
+2023-04-12 09:38:05,918 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:38:07,945 step 840: g_loss is 2.887335777282715, d_loss is 0.1898232251405716
+2023-04-12 09:38:09,448 step 845: g_loss is 2.691795825958252, d_loss is 0.017729874700307846
+2023-04-12 09:38:10,915 step 850: g_loss is 1.4405577182769775, d_loss is 0.21475721895694733
+2023-04-12 09:38:12,419 step 855: g_loss is 2.9174437522888184, d_loss is 0.10734549164772034
+2023-04-12 09:38:12,966 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:38:14,531 step 860: g_loss is 2.2780439853668213, d_loss is 0.001459682360291481
+2023-04-12 09:38:16,118 step 865: g_loss is 2.0381205081939697, d_loss is 0.46469998359680176
+2023-04-12 09:38:17,611 step 870: g_loss is 2.379727602005005, d_loss is 0.8027711510658264
+2023-04-12 09:38:19,041 step 875: g_loss is 3.0521984100341797, d_loss is 0.04860283434391022
+2023-04-12 09:38:19,995 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:42:54,691 epoch 40: IS is 1.7261226177215576+-0.020210694521665573, FID is 269.7675366391782
+2023-04-12 09:42:54,692 best epoch 0: IS is 1.7470228672027588
+2023-04-12 09:42:54,693 best epoch 0: FID is 209.36976003401588
+2023-04-12 09:42:55,868 step 880: g_loss is 1.9314520359039307, d_loss is 0.09855126589536667
+2023-04-12 09:42:57,346 step 885: g_loss is 3.347156524658203, d_loss is 0.09797617793083191
+2023-04-12 09:42:58,890 step 890: g_loss is 2.302337646484375, d_loss is 0.006985418498516083
+2023-04-12 09:43:00,408 step 895: g_loss is 2.0385661125183105, d_loss is 0.4569907784461975
+2023-04-12 09:43:01,897 step 900: g_loss is 1.9834632873535156, d_loss is 0.4438336193561554
+2023-04-12 09:43:02,225 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:43:04,044 step 905: g_loss is 4.3870463371276855, d_loss is 0.0541626401245594
+2023-04-12 09:43:05,560 step 910: g_loss is 1.7281389236450195, d_loss is 0.08319111168384552
+2023-04-12 09:43:07,046 step 915: g_loss is 2.067065715789795, d_loss is 0.2278483510017395
+2023-04-12 09:43:08,546 step 920: g_loss is 1.4970229864120483, d_loss is 0.1081477627158165
+2023-04-12 09:43:09,283 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:43:10,600 step 925: g_loss is 1.2999756336212158, d_loss is 0.24237582087516785
+2023-04-12 09:43:12,086 step 930: g_loss is 2.072692632675171, d_loss is 0.07994626462459564
+2023-04-12 09:43:13,550 step 935: g_loss is 3.6654162406921387, d_loss is 0.831605076789856
+2023-04-12 09:43:15,032 step 940: g_loss is 2.562075138092041, d_loss is 0.1037721037864685
+2023-04-12 09:43:16,528 step 945: g_loss is 1.8935478925704956, d_loss is 0.16986121237277985
+2023-04-12 09:43:16,673 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:43:18,629 step 950: g_loss is 3.0804667472839355, d_loss is 0.1523222029209137
+2023-04-12 09:43:20,065 step 955: g_loss is 2.3763086795806885, d_loss is 0.042825087904930115
+2023-04-12 09:43:21,569 step 960: g_loss is 1.3709243535995483, d_loss is 0.3009408116340637
+2023-04-12 09:43:23,033 step 965: g_loss is 3.264974594116211, d_loss is 0.11108793318271637
+2023-04-12 09:43:23,588 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:47:58,647 epoch 44: IS is 2.2783687114715576+-0.024726299569010735, FID is 259.213768655532
+2023-04-12 09:47:58,649 best epoch 0: IS is 2.2783687114715576
+2023-04-12 09:47:58,649 best epoch 0: FID is 209.36976003401588
+2023-04-12 09:48:00,190 step 970: g_loss is 2.309627056121826, d_loss is 0.018922945484519005
+2023-04-12 09:48:01,713 step 975: g_loss is 1.1128910779953003, d_loss is 0.7864526510238647
+2023-04-12 09:48:03,245 step 980: g_loss is 2.017296314239502, d_loss is 1.6588807106018066
+2023-04-12 09:48:04,741 step 985: g_loss is 3.81585693359375, d_loss is 0.3912981450557709
+2023-04-12 09:48:05,743 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_7x7', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:48:06,879 step 990: g_loss is 2.2932610511779785, d_loss is 0.10519383102655411
+2023-04-12 09:48:08,364 step 995: g_loss is 2.0494487285614014, d_loss is 0.3352479338645935
+2023-04-12 09:48:09,817 step 1000: g_loss is 2.3670268058776855, d_loss is 0.28614330291748047
+2023-04-12 09:48:11,245 step 1005: g_loss is 2.609556198120117, d_loss is 0.09378153085708618
+2023-04-12 09:48:12,725 step 1010: g_loss is 1.1435916423797607, d_loss is 0.6092174053192139
+2023-04-12 09:48:13,063 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_7x7', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:48:14,831 step 1015: g_loss is 1.1519484519958496, d_loss is 1.2321640253067017
+2023-04-12 09:48:16,335 step 1020: g_loss is 0.9350691437721252, d_loss is 0.8228147029876709
+2023-04-12 09:48:17,793 step 1025: g_loss is 1.3519971370697021, d_loss is 0.031049834564328194
+2023-04-12 09:48:19,247 step 1030: g_loss is 0.8651688098907471, d_loss is 0.5965515375137329
+2023-04-12 09:48:20,006 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_5x5', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:48:21,341 step 1035: g_loss is 3.193948745727539, d_loss is 0.3473002016544342
+2023-04-12 09:48:22,775 step 1040: g_loss is 2.6283111572265625, d_loss is 0.2627669870853424
+2023-04-12 09:48:24,254 step 1045: g_loss is 1.3120834827423096, d_loss is 0.9001598358154297
+2023-04-12 09:48:25,805 step 1050: g_loss is 0.5671542882919312, d_loss is 1.472273588180542
+2023-04-12 09:48:27,283 step 1055: g_loss is 2.4361181259155273, d_loss is 0.8841307759284973
+2023-04-12 09:48:27,426 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_7x7', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '3': [('conv_5x5', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:53:02,481 epoch 48: IS is 2.317631244659424+-0.03208118677139282, FID is 281.63936025916286
+2023-04-12 09:53:02,482 best epoch 0: IS is 2.317631244659424
+2023-04-12 09:53:02,482 best epoch 0: FID is 209.36976003401588
+2023-04-12 09:53:04,502 step 1060: g_loss is 1.384861946105957, d_loss is 0.7627041935920715
+2023-04-12 09:53:05,950 step 1065: g_loss is 1.5005981922149658, d_loss is 0.10385362803936005
+2023-04-12 09:53:07,459 step 1070: g_loss is 1.4544965028762817, d_loss is 0.5467852354049683
+2023-04-12 09:53:08,943 step 1075: g_loss is 3.8506107330322266, d_loss is 0.26897871494293213
+2023-04-12 09:53:09,495 gen_genotype = Genotype_gen(normal={'1': [('sep_conv_7x7', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:53:11,136 step 1080: g_loss is 0.9299910664558411, d_loss is 0.2048361897468567
+2023-04-12 09:53:12,597 step 1085: g_loss is 3.131237506866455, d_loss is 1.0803446769714355
+2023-04-12 09:53:14,054 step 1090: g_loss is 0.787585973739624, d_loss is 0.1333637684583664
+2023-04-12 09:53:15,522 step 1095: g_loss is 1.7429659366607666, d_loss is 0.4309905767440796
+2023-04-12 09:53:16,465 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:53:17,569 step 1100: g_loss is 0.7344440817832947, d_loss is 0.7723872661590576
+2023-04-12 09:53:19,045 step 1105: g_loss is 2.1905517578125, d_loss is 0.20280517637729645
+2023-04-12 09:53:20,512 step 1110: g_loss is 2.018336534500122, d_loss is 0.1909649670124054
+2023-04-12 09:53:22,031 step 1115: g_loss is 0.1726946234703064, d_loss is 0.8743132948875427
+2023-04-12 09:53:23,533 step 1120: g_loss is 1.7913426160812378, d_loss is 0.13026690483093262
+2023-04-12 09:53:23,886 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:53:25,592 step 1125: g_loss is 1.1102206707000732, d_loss is 0.15307438373565674
+2023-04-12 09:53:27,106 step 1130: g_loss is 1.8415014743804932, d_loss is 0.6036040782928467
+2023-04-12 09:53:28,701 step 1135: g_loss is 0.9831833243370056, d_loss is 0.534381091594696
+2023-04-12 09:53:30,130 step 1140: g_loss is 0.9529417753219604, d_loss is 1.2104806900024414
+2023-04-12 09:53:30,914 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:58:06,440 epoch 52: IS is 1.7675087451934814+-0.0185245368629694, FID is 232.6090052749866
+2023-04-12 09:58:06,442 best epoch 0: IS is 2.317631244659424
+2023-04-12 09:58:06,442 best epoch 0: FID is 209.36976003401588
+2023-04-12 09:58:07,840 step 1145: g_loss is 1.9911173582077026, d_loss is 0.07696764171123505
+2023-04-12 09:58:09,291 step 1150: g_loss is 1.5866676568984985, d_loss is 0.6921124458312988
+2023-04-12 09:58:10,764 step 1155: g_loss is 1.438248872756958, d_loss is 0.3199092745780945
+2023-04-12 09:58:12,238 step 1160: g_loss is 2.589064598083496, d_loss is 0.2434067577123642
+2023-04-12 09:58:13,688 step 1165: g_loss is 2.252084493637085, d_loss is 0.8036130666732788
+2023-04-12 09:58:13,826 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:58:15,774 step 1170: g_loss is 1.3412153720855713, d_loss is 0.247379332780838
+2023-04-12 09:58:17,217 step 1175: g_loss is 1.7832785844802856, d_loss is 1.4404724836349487
+2023-04-12 09:58:18,668 step 1180: g_loss is 2.438534736633301, d_loss is 0.9956880211830139
+2023-04-12 09:58:20,127 step 1185: g_loss is 1.4804433584213257, d_loss is 0.7619990706443787
+2023-04-12 09:58:20,667 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:58:22,145 step 1190: g_loss is 1.155187964439392, d_loss is 1.020704746246338
+2023-04-12 09:58:23,635 step 1195: g_loss is 1.9208192825317383, d_loss is 0.9613766670227051
+2023-04-12 09:58:25,105 step 1200: g_loss is 2.1888725757598877, d_loss is 0.5262295603752136
+2023-04-12 09:58:26,573 step 1205: g_loss is 1.2274726629257202, d_loss is 1.0692784786224365
+2023-04-12 09:58:27,534 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_5x5', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 09:58:28,636 step 1210: g_loss is 0.5185474753379822, d_loss is 1.1384352445602417
+2023-04-12 09:58:30,141 step 1215: g_loss is 2.3361968994140625, d_loss is 0.9942298531532288
+2023-04-12 09:58:31,589 step 1220: g_loss is 1.2889320850372314, d_loss is 0.7836356163024902
+2023-04-12 09:58:33,056 step 1225: g_loss is 0.8076655864715576, d_loss is 0.8489381670951843
+2023-04-12 09:58:34,546 step 1230: g_loss is 1.3483800888061523, d_loss is 1.5309122800827026
+2023-04-12 09:58:34,890 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_5x5', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:03:09,621 epoch 56: IS is 2.118344783782959+-0.01926078274846077, FID is 232.69775199140588
+2023-04-12 10:03:09,623 best epoch 0: IS is 2.317631244659424
+2023-04-12 10:03:09,623 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:03:11,403 step 1235: g_loss is 1.8429516553878784, d_loss is 1.3194245100021362
+2023-04-12 10:03:12,852 step 1240: g_loss is 0.9283409118652344, d_loss is 0.6364419460296631
+2023-04-12 10:03:14,320 step 1245: g_loss is 1.2098419666290283, d_loss is 0.20350176095962524
+2023-04-12 10:03:15,810 step 1250: g_loss is 3.455836534500122, d_loss is 0.7151427865028381
+2023-04-12 10:03:16,581 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:03:17,902 step 1255: g_loss is 2.9123077392578125, d_loss is 1.5604609251022339
+2023-04-12 10:03:19,341 step 1260: g_loss is 2.961447238922119, d_loss is 0.7410621643066406
+2023-04-12 10:03:20,845 step 1265: g_loss is 3.7244014739990234, d_loss is 0.6611548066139221
+2023-04-12 10:03:22,323 step 1270: g_loss is -0.07677251845598221, d_loss is 0.2576103210449219
+2023-04-12 10:03:23,837 step 1275: g_loss is 2.810027599334717, d_loss is 0.23486736416816711
+2023-04-12 10:03:23,986 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_5x5', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:03:25,990 step 1280: g_loss is 4.640405654907227, d_loss is 0.7261582016944885
+2023-04-12 10:03:27,455 step 1285: g_loss is 2.0632216930389404, d_loss is 0.04607940465211868
+2023-04-12 10:03:28,906 step 1290: g_loss is 1.4583373069763184, d_loss is 0.8824605941772461
+2023-04-12 10:03:30,376 step 1295: g_loss is 0.3000865578651428, d_loss is 0.36655062437057495
+2023-04-12 10:03:30,958 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_5x5', 1), ('sep_conv_7x7', 2)], '2': [('conv_1x1', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:03:32,531 step 1300: g_loss is 3.2895615100860596, d_loss is 0.2719738483428955
+2023-04-12 10:03:33,949 step 1305: g_loss is 2.3630032539367676, d_loss is 0.4460183382034302
+2023-04-12 10:03:35,443 step 1310: g_loss is 3.064070463180542, d_loss is 0.5340150594711304
+2023-04-12 10:03:36,905 step 1315: g_loss is 3.7721760272979736, d_loss is 0.5331220626831055
+2023-04-12 10:03:37,857 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('sep_conv_5x5', 1), ('sep_conv_7x7', 2)], '2': [('conv_1x1', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:08:12,577 epoch 60: IS is 2.000553607940674+-0.029240595176815987, FID is 235.94165149424728
+2023-04-12 10:08:12,579 best epoch 0: IS is 2.317631244659424
+2023-04-12 10:08:12,579 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:08:13,656 step 1320: g_loss is 1.303614616394043, d_loss is 0.3934360444545746
+2023-04-12 10:08:15,100 step 1325: g_loss is 1.1541259288787842, d_loss is 0.5824195146560669
+2023-04-12 10:08:16,689 step 1330: g_loss is 2.6327285766601562, d_loss is 0.53340744972229
+2023-04-12 10:08:18,184 step 1335: g_loss is 3.899378776550293, d_loss is 0.7706687450408936
+2023-04-12 10:08:19,670 step 1340: g_loss is 1.6813750267028809, d_loss is 0.8612878918647766
+2023-04-12 10:08:20,028 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_1x1', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:08:21,827 step 1345: g_loss is 1.7029683589935303, d_loss is 0.7248044013977051
+2023-04-12 10:08:23,343 step 1350: g_loss is 1.0998013019561768, d_loss is 0.6186319589614868
+2023-04-12 10:08:24,841 step 1355: g_loss is 1.3855843544006348, d_loss is 0.5238933563232422
+2023-04-12 10:08:26,340 step 1360: g_loss is 0.9296979904174805, d_loss is 0.5493205785751343
+2023-04-12 10:08:27,153 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_1x1', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:08:28,450 step 1365: g_loss is 1.8780534267425537, d_loss is 0.8984119296073914
+2023-04-12 10:08:29,957 step 1370: g_loss is 0.7332527041435242, d_loss is 0.4669117331504822
+2023-04-12 10:08:31,440 step 1375: g_loss is 1.9718221426010132, d_loss is 0.749142050743103
+2023-04-12 10:08:32,884 step 1380: g_loss is 1.3633441925048828, d_loss is 0.557900071144104
+2023-04-12 10:08:34,449 step 1385: g_loss is 4.923959732055664, d_loss is 0.5925064086914062
+2023-04-12 10:08:34,597 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:08:36,610 step 1390: g_loss is 0.3965286910533905, d_loss is 0.6047583818435669
+2023-04-12 10:08:38,061 step 1395: g_loss is 1.492518663406372, d_loss is 1.4499706029891968
+2023-04-12 10:08:39,489 step 1400: g_loss is 0.9176841974258423, d_loss is 0.5833255648612976
+2023-04-12 10:08:40,936 step 1405: g_loss is 0.26288795471191406, d_loss is 1.0386040210723877
+2023-04-12 10:08:41,471 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:13:17,151 epoch 64: IS is 2.1472978591918945+-0.022076085209846497, FID is 248.35449193923532
+2023-04-12 10:13:17,154 best epoch 0: IS is 2.317631244659424
+2023-04-12 10:13:17,155 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:13:18,724 step 1410: g_loss is 1.293918490409851, d_loss is 0.7950406074523926
+2023-04-12 10:13:20,179 step 1415: g_loss is 0.7906554937362671, d_loss is 0.6006237268447876
+2023-04-12 10:13:21,631 step 1420: g_loss is 0.9509246945381165, d_loss is 1.280636191368103
+2023-04-12 10:13:23,084 step 1425: g_loss is 0.30515170097351074, d_loss is 0.3042277693748474
+2023-04-12 10:13:24,051 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:13:25,126 step 1430: g_loss is 0.21411529183387756, d_loss is 0.730692982673645
+2023-04-12 10:13:26,621 step 1435: g_loss is 1.8994208574295044, d_loss is 0.5175546407699585
+2023-04-12 10:13:28,128 step 1440: g_loss is 2.204714059829712, d_loss is 0.972970724105835
+2023-04-12 10:13:29,636 step 1445: g_loss is 2.3591222763061523, d_loss is 0.7550598382949829
+2023-04-12 10:13:31,061 step 1450: g_loss is 2.997856616973877, d_loss is 0.5790449380874634
+2023-04-12 10:13:31,390 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:13:33,154 step 1455: g_loss is 1.7050840854644775, d_loss is 0.9429041147232056
+2023-04-12 10:13:34,642 step 1460: g_loss is 3.5022387504577637, d_loss is 0.49715614318847656
+2023-04-12 10:13:36,149 step 1465: g_loss is 2.408041477203369, d_loss is 0.8923580050468445
+2023-04-12 10:13:37,627 step 1470: g_loss is 0.4702775478363037, d_loss is 0.9429923892021179
+2023-04-12 10:13:38,374 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:13:39,684 step 1475: g_loss is 2.2217655181884766, d_loss is 0.8583550453186035
+2023-04-12 10:13:41,183 step 1480: g_loss is 1.5301363468170166, d_loss is 0.8076179027557373
+2023-04-12 10:13:42,621 step 1485: g_loss is 0.8044547438621521, d_loss is 1.0255399942398071
+2023-04-12 10:13:44,105 step 1490: g_loss is 0.8231263160705566, d_loss is 0.6080831289291382
+2023-04-12 10:13:45,578 step 1495: g_loss is 1.3558586835861206, d_loss is 0.5818667411804199
+2023-04-12 10:13:45,721 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:18:22,237 epoch 68: IS is 1.9972139596939087+-0.014157642610371113, FID is 242.64583357050822
+2023-04-12 10:18:22,239 best epoch 0: IS is 2.317631244659424
+2023-04-12 10:18:22,239 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:18:24,186 step 1500: g_loss is 1.3344638347625732, d_loss is 0.3185109496116638
+2023-04-12 10:18:25,649 step 1505: g_loss is 2.3932249546051025, d_loss is 0.42464691400527954
+2023-04-12 10:18:27,082 step 1510: g_loss is 0.8387122750282288, d_loss is 0.6840053796768188
+2023-04-12 10:18:28,571 step 1515: g_loss is 0.8477622866630554, d_loss is 0.4631379246711731
+2023-04-12 10:18:29,122 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:18:30,662 step 1520: g_loss is 1.8439942598342896, d_loss is 0.08940008282661438
+2023-04-12 10:18:32,105 step 1525: g_loss is 2.4327874183654785, d_loss is 0.5305925607681274
+2023-04-12 10:18:33,612 step 1530: g_loss is -0.09198752045631409, d_loss is 1.057973861694336
+2023-04-12 10:18:35,101 step 1535: g_loss is 2.011836528778076, d_loss is 1.174208164215088
+2023-04-12 10:18:36,045 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:18:37,186 step 1540: g_loss is 0.4702048897743225, d_loss is 0.6979190111160278
+2023-04-12 10:18:38,677 step 1545: g_loss is 0.8771247267723083, d_loss is 1.013458490371704
+2023-04-12 10:18:40,170 step 1550: g_loss is 1.6679792404174805, d_loss is 1.2603964805603027
+2023-04-12 10:18:41,650 step 1555: g_loss is 3.0367746353149414, d_loss is 0.192976176738739
+2023-04-12 10:18:43,114 step 1560: g_loss is 3.2035505771636963, d_loss is 0.9878234267234802
+2023-04-12 10:18:43,449 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:18:45,195 step 1565: g_loss is 0.5830893516540527, d_loss is 1.0616130828857422
+2023-04-12 10:18:46,656 step 1570: g_loss is 1.794527530670166, d_loss is 0.5832167267799377
+2023-04-12 10:18:48,172 step 1575: g_loss is 0.33327996730804443, d_loss is 1.290393590927124
+2023-04-12 10:18:49,637 step 1580: g_loss is 2.3572380542755127, d_loss is 0.6902323365211487
+2023-04-12 10:18:50,387 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:23:24,935 epoch 72: IS is 2.4205236434936523+-0.023887520655989647, FID is 265.1219518726345
+2023-04-12 10:23:24,936 best epoch 0: IS is 2.4205236434936523
+2023-04-12 10:23:24,936 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:23:26,277 step 1585: g_loss is 2.3528268337249756, d_loss is 0.8458356261253357
+2023-04-12 10:23:27,788 step 1590: g_loss is 1.941932201385498, d_loss is 0.772388756275177
+2023-04-12 10:23:29,287 step 1595: g_loss is 3.375866651535034, d_loss is 1.9945309162139893
+2023-04-12 10:23:30,768 step 1600: g_loss is 0.05313393101096153, d_loss is 0.8338354229927063
+2023-04-12 10:23:32,217 step 1605: g_loss is 1.3519647121429443, d_loss is 0.5988932251930237
+2023-04-12 10:23:32,358 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:23:34,369 step 1610: g_loss is 2.231041431427002, d_loss is 0.9074821472167969
+2023-04-12 10:23:35,826 step 1615: g_loss is 1.202650547027588, d_loss is 0.9372400641441345
+2023-04-12 10:23:37,308 step 1620: g_loss is 4.015120983123779, d_loss is 1.4945210218429565
+2023-04-12 10:23:38,760 step 1625: g_loss is 1.241121768951416, d_loss is 0.6280272006988525
+2023-04-12 10:23:39,310 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:23:40,801 step 1630: g_loss is 2.210890293121338, d_loss is 0.859347939491272
+2023-04-12 10:23:42,292 step 1635: g_loss is 0.7163347005844116, d_loss is 0.2856881618499756
+2023-04-12 10:23:43,770 step 1640: g_loss is 0.5870156288146973, d_loss is 1.1524872779846191
+2023-04-12 10:23:45,249 step 1645: g_loss is 2.570301055908203, d_loss is 1.1895897388458252
+2023-04-12 10:23:46,178 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:23:47,373 step 1650: g_loss is 0.7170742750167847, d_loss is 0.6369367241859436
+2023-04-12 10:23:48,836 step 1655: g_loss is 1.2901588678359985, d_loss is 0.821172833442688
+2023-04-12 10:23:50,323 step 1660: g_loss is 1.9385075569152832, d_loss is 1.0020962953567505
+2023-04-12 10:23:51,777 step 1665: g_loss is 0.49200013279914856, d_loss is 0.7303127646446228
+2023-04-12 10:23:53,220 step 1670: g_loss is 1.0624430179595947, d_loss is 0.8842799067497253
+2023-04-12 10:23:53,580 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:28:28,083 epoch 76: IS is 2.100966453552246+-0.016374439001083374, FID is 253.1944858399354
+2023-04-12 10:28:28,085 best epoch 0: IS is 2.4205236434936523
+2023-04-12 10:28:28,085 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:28:29,920 step 1675: g_loss is 2.7513818740844727, d_loss is 2.1099865436553955
+2023-04-12 10:28:31,409 step 1680: g_loss is 1.168328881263733, d_loss is 0.6197403073310852
+2023-04-12 10:28:32,895 step 1685: g_loss is 3.6392345428466797, d_loss is 0.8438198566436768
+2023-04-12 10:28:34,332 step 1690: g_loss is 0.9730408191680908, d_loss is 0.25619906187057495
+2023-04-12 10:28:35,127 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:28:36,405 step 1695: g_loss is 0.2486955225467682, d_loss is 0.9762377738952637
+2023-04-12 10:28:37,848 step 1700: g_loss is 0.3307616710662842, d_loss is 1.150743842124939
+2023-04-12 10:28:39,325 step 1705: g_loss is 0.5485672354698181, d_loss is 1.1836391687393188
+2023-04-12 10:28:40,763 step 1710: g_loss is 0.46300846338272095, d_loss is 1.430042028427124
+2023-04-12 10:28:42,235 step 1715: g_loss is 1.067702054977417, d_loss is 0.26712802052497864
+2023-04-12 10:28:42,365 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:28:44,337 step 1720: g_loss is 1.464986801147461, d_loss is 0.18512657284736633
+2023-04-12 10:28:45,817 step 1725: g_loss is -0.683751106262207, d_loss is 0.7442501783370972
+2023-04-12 10:28:47,322 step 1730: g_loss is 1.1718897819519043, d_loss is 0.759371280670166
+2023-04-12 10:28:48,794 step 1735: g_loss is 0.7194368839263916, d_loss is 1.126708984375
+2023-04-12 10:28:49,350 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:28:50,869 step 1740: g_loss is 0.9773247241973877, d_loss is 0.37761735916137695
+2023-04-12 10:28:52,325 step 1745: g_loss is 0.9523760676383972, d_loss is 0.9663680195808411
+2023-04-12 10:28:53,810 step 1750: g_loss is 1.2190098762512207, d_loss is 0.6411914825439453
+2023-04-12 10:28:55,413 step 1755: g_loss is 1.6636356115341187, d_loss is 0.6783818602561951
+2023-04-12 10:28:56,373 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:33:30,070 epoch 80: IS is 1.764023780822754+-0.019043993204832077, FID is 225.74791210322724
+2023-04-12 10:33:30,072 best epoch 0: IS is 2.4205236434936523
+2023-04-12 10:33:30,072 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:33:31,206 step 1760: g_loss is 3.4003190994262695, d_loss is 0.36627301573753357
+2023-04-12 10:33:32,707 step 1765: g_loss is 2.5581517219543457, d_loss is 0.7980917096138
+2023-04-12 10:33:34,212 step 1770: g_loss is 1.828392744064331, d_loss is 0.7546690702438354
+2023-04-12 10:33:35,699 step 1775: g_loss is 0.969963550567627, d_loss is 0.5977950692176819
+2023-04-12 10:33:37,189 step 1780: g_loss is 0.5664767622947693, d_loss is 1.0030142068862915
+2023-04-12 10:33:37,541 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('conv_1x1', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:33:39,257 step 1785: g_loss is 1.5382122993469238, d_loss is 0.9016970992088318
+2023-04-12 10:33:40,738 step 1790: g_loss is 0.3475229740142822, d_loss is 0.9948852062225342
+2023-04-12 10:33:42,332 step 1795: g_loss is 2.0248444080352783, d_loss is 1.1402466297149658
+2023-04-12 10:33:43,857 step 1800: g_loss is -0.25139063596725464, d_loss is 0.5837327837944031
+2023-04-12 10:33:44,629 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:33:45,974 step 1805: g_loss is 0.42369258403778076, d_loss is 1.302991271018982
+2023-04-12 10:33:47,462 step 1810: g_loss is 0.4072991609573364, d_loss is 0.8565371036529541
+2023-04-12 10:33:48,960 step 1815: g_loss is 0.9426736235618591, d_loss is 1.4276652336120605
+2023-04-12 10:33:50,429 step 1820: g_loss is 4.566287994384766, d_loss is 1.4170876741409302
+2023-04-12 10:33:51,970 step 1825: g_loss is 0.057542622089385986, d_loss is 0.6906284093856812
+2023-04-12 10:33:52,129 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:33:54,087 step 1830: g_loss is 0.6704728007316589, d_loss is 0.270519495010376
+2023-04-12 10:33:55,559 step 1835: g_loss is -0.38554826378822327, d_loss is 0.950653612613678
+2023-04-12 10:33:57,040 step 1840: g_loss is 2.317899703979492, d_loss is 1.244521141052246
+2023-04-12 10:33:58,557 step 1845: g_loss is 1.0678560733795166, d_loss is 0.7855620384216309
+2023-04-12 10:33:59,102 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('sep_conv_3x3', 1), ('conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:38:34,550 epoch 84: IS is 1.7060463428497314+-0.01824292726814747, FID is 225.19355230101874
+2023-04-12 10:38:34,552 best epoch 0: IS is 2.4205236434936523
+2023-04-12 10:38:34,552 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:38:36,092 step 1850: g_loss is 0.14438305795192719, d_loss is 1.06103515625
+2023-04-12 10:38:37,542 step 1855: g_loss is 0.6176224946975708, d_loss is 0.9870736598968506
+2023-04-12 10:38:39,157 step 1860: g_loss is 0.7967664003372192, d_loss is 1.2307953834533691
+2023-04-12 10:38:40,651 step 1865: g_loss is 2.5559778213500977, d_loss is 0.6522470712661743
+2023-04-12 10:38:41,627 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:38:42,701 step 1870: g_loss is 0.7667529582977295, d_loss is 0.9425421357154846
+2023-04-12 10:38:44,162 step 1875: g_loss is 2.5535049438476562, d_loss is 0.08329793810844421
+2023-04-12 10:38:45,619 step 1880: g_loss is 0.7796742916107178, d_loss is 0.23791451752185822
+2023-04-12 10:38:47,048 step 1885: g_loss is -0.17619642615318298, d_loss is 1.0717053413391113
+2023-04-12 10:38:48,532 step 1890: g_loss is -0.11557357013225555, d_loss is 1.0809048414230347
+2023-04-12 10:38:48,875 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('sep_conv_3x3', 1), ('sep_conv_7x7', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:38:50,676 step 1895: g_loss is 1.7059030532836914, d_loss is 0.6321144104003906
+2023-04-12 10:38:52,096 step 1900: g_loss is 4.660960674285889, d_loss is 1.777079463005066
+2023-04-12 10:38:53,567 step 1905: g_loss is 1.2684895992279053, d_loss is 1.2411139011383057
+2023-04-12 10:38:55,009 step 1910: g_loss is 1.2690792083740234, d_loss is 1.137866735458374
+2023-04-12 10:38:55,801 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:38:57,233 step 1915: g_loss is 1.304329752922058, d_loss is 2.024589776992798
+2023-04-12 10:38:58,667 step 1920: g_loss is 0.3098331689834595, d_loss is 0.3452601730823517
+2023-04-12 10:39:00,133 step 1925: g_loss is 0.5532879829406738, d_loss is 0.9843509793281555
+2023-04-12 10:39:01,605 step 1930: g_loss is 1.533444881439209, d_loss is 0.938701868057251
+2023-04-12 10:39:03,029 step 1935: g_loss is 2.5681262016296387, d_loss is 0.928213357925415
+2023-04-12 10:39:03,173 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:43:38,504 epoch 88: IS is 1.904455542564392+-0.011652352288365364, FID is 239.67055857439817
+2023-04-12 10:43:38,506 best epoch 0: IS is 2.4205236434936523
+2023-04-12 10:43:38,506 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:43:40,475 step 1940: g_loss is 0.24939674139022827, d_loss is 0.33139705657958984
+2023-04-12 10:43:41,990 step 1945: g_loss is 1.8532648086547852, d_loss is 1.1015393733978271
+2023-04-12 10:43:43,477 step 1950: g_loss is 0.8148574829101562, d_loss is 0.9330074787139893
+2023-04-12 10:43:44,924 step 1955: g_loss is 1.915757179260254, d_loss is 0.9326436519622803
+2023-04-12 10:43:45,462 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('sep_conv_7x7', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:43:46,992 step 1960: g_loss is 1.5839101076126099, d_loss is 1.2583433389663696
+2023-04-12 10:43:48,463 step 1965: g_loss is 2.2303059101104736, d_loss is 1.21932053565979
+2023-04-12 10:43:49,942 step 1970: g_loss is 0.23645846545696259, d_loss is 1.0299772024154663
+2023-04-12 10:43:51,414 step 1975: g_loss is 0.26676154136657715, d_loss is 1.1143277883529663
+2023-04-12 10:43:52,383 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:43:53,529 step 1980: g_loss is 1.6158676147460938, d_loss is 1.7798206806182861
+2023-04-12 10:43:55,038 step 1985: g_loss is 0.006006151437759399, d_loss is 1.1019420623779297
+2023-04-12 10:43:56,564 step 1990: g_loss is 1.4218037128448486, d_loss is 1.2760915756225586
+2023-04-12 10:43:58,084 step 1995: g_loss is 1.9454641342163086, d_loss is 0.8327058553695679
+2023-04-12 10:43:59,563 step 2000: g_loss is 1.5856988430023193, d_loss is 0.8802170753479004
+2023-04-12 10:43:59,917 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('conv_5x5', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:44:01,838 step 2005: g_loss is 1.966461181640625, d_loss is 1.1193619966506958
+2023-04-12 10:44:03,296 step 2010: g_loss is 0.9929134249687195, d_loss is 0.9253712296485901
+2023-04-12 10:44:04,774 step 2015: g_loss is 0.8149809837341309, d_loss is 1.3504129648208618
+2023-04-12 10:44:06,269 step 2020: g_loss is 1.8037819862365723, d_loss is 1.0290402173995972
+2023-04-12 10:44:07,040 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('sep_conv_3x3', 1), ('conv_5x5', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:48:42,483 epoch 92: IS is 2.011152982711792+-0.01604572683572769, FID is 231.70743611459005
+2023-04-12 10:48:42,486 best epoch 0: IS is 2.4205236434936523
+2023-04-12 10:48:42,496 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:48:43,859 step 2025: g_loss is 0.6013609170913696, d_loss is 0.7038950324058533
+2023-04-12 10:48:45,319 step 2030: g_loss is -0.6534241437911987, d_loss is 0.46193233132362366
+2023-04-12 10:48:46,792 step 2035: g_loss is 2.0473458766937256, d_loss is 1.1352312564849854
+2023-04-12 10:48:48,274 step 2040: g_loss is 2.0953917503356934, d_loss is 0.2038838267326355
+2023-04-12 10:48:49,752 step 2045: g_loss is 1.3306493759155273, d_loss is 1.0983970165252686
+2023-04-12 10:48:49,897 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('conv_5x5', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:48:51,824 step 2050: g_loss is 3.1355671882629395, d_loss is 0.6214344501495361
+2023-04-12 10:48:53,293 step 2055: g_loss is 2.8042171001434326, d_loss is 1.2184545993804932
+2023-04-12 10:48:54,798 step 2060: g_loss is 0.48949769139289856, d_loss is 0.832332193851471
+2023-04-12 10:48:56,329 step 2065: g_loss is 1.1950522661209106, d_loss is 1.0679943561553955
+2023-04-12 10:48:56,879 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('conv_5x5', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:48:58,417 step 2070: g_loss is 1.0753812789916992, d_loss is 0.8155350685119629
+2023-04-12 10:48:59,853 step 2075: g_loss is 3.084965705871582, d_loss is 1.044608235359192
+2023-04-12 10:49:01,348 step 2080: g_loss is 1.4314703941345215, d_loss is 0.7310460805892944
+2023-04-12 10:49:02,797 step 2085: g_loss is -0.48463475704193115, d_loss is 0.6954027414321899
+2023-04-12 10:49:03,789 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('conv_5x5', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:49:04,897 step 2090: g_loss is 1.2379872798919678, d_loss is 0.19970566034317017
+2023-04-12 10:49:06,430 step 2095: g_loss is 2.0895159244537354, d_loss is 0.7515620589256287
+2023-04-12 10:49:07,960 step 2100: g_loss is 1.8295756578445435, d_loss is 0.3563253581523895
+2023-04-12 10:49:09,422 step 2105: g_loss is 1.1334810256958008, d_loss is 1.0780774354934692
+2023-04-12 10:49:10,910 step 2110: g_loss is 1.149697184562683, d_loss is 0.40627264976501465
+2023-04-12 10:49:11,243 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('conv_5x5', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:53:45,955 epoch 96: IS is 2.0756545066833496+-0.021631229668855667, FID is 225.2419581371966
+2023-04-12 10:53:45,957 best epoch 0: IS is 2.4205236434936523
+2023-04-12 10:53:45,957 best epoch 0: FID is 209.36976003401588
+2023-04-12 10:53:47,794 step 2115: g_loss is 0.42404472827911377, d_loss is 0.528275728225708
+2023-04-12 10:53:49,344 step 2120: g_loss is 1.4746354818344116, d_loss is 1.1251237392425537
+2023-04-12 10:53:50,790 step 2125: g_loss is 1.812316656112671, d_loss is 0.5630660057067871
+2023-04-12 10:53:52,273 step 2130: g_loss is 2.414482593536377, d_loss is 0.3574807047843933
+2023-04-12 10:53:53,051 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('conv_5x5', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:53:54,385 step 2135: g_loss is 1.6321964263916016, d_loss is 0.5679668188095093
+2023-04-12 10:53:55,869 step 2140: g_loss is 2.4699950218200684, d_loss is 0.7681636214256287
+2023-04-12 10:53:57,372 step 2145: g_loss is 2.8240647315979004, d_loss is 0.17034912109375
+2023-04-12 10:53:58,867 step 2150: g_loss is 1.5572528839111328, d_loss is 0.8178960680961609
+2023-04-12 10:54:00,326 step 2155: g_loss is 1.5887904167175293, d_loss is 0.9461150765419006
+2023-04-12 10:54:00,479 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('conv_5x5', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_7x7', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:54:02,454 step 2160: g_loss is 1.096099853515625, d_loss is 0.7350939512252808
+2023-04-12 10:54:03,936 step 2165: g_loss is 2.0686988830566406, d_loss is 0.790539562702179
+2023-04-12 10:54:05,410 step 2170: g_loss is 2.3656976222991943, d_loss is 0.5328646898269653
+2023-04-12 10:54:06,899 step 2175: g_loss is 1.2061002254486084, d_loss is 0.7220735549926758
+2023-04-12 10:54:07,454 gen_genotype = Genotype_gen(normal={'1': [('conv_3x3', 0), ('conv_3x3', 1), ('conv_3x3', 2)], '2': [('sep_conv_5x5', 0), ('conv_3x3', 1), ('conv_5x5', 2)], '3': [('conv_3x3', 0), ('conv_3x3', 1), ('sep_conv_3x3', 2)]}, up={'1': [('deconv', 0), ('deconv', 1)], '2': [('deconv', 0), ('deconv', 1)], '3': [('deconv', 0), ('deconv', 1)]}, skip_2=[('deconv', 0)], skip_3=[('deconv', 0), ('deconv', 1)])
+2023-04-12 10:54:07,623 best epoch 0: IS is 2.4205236434936523
+2023-04-12 10:54:07,624 best epoch 0: FID is 209.36976003401588
